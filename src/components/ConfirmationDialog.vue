@@ -10,7 +10,7 @@
       </v-card-text>
 
       <v-card-text v-if="requiresInput" class="pb-8" auto-grow>
-        <v-textarea v-model="inputText" />
+        <v-textarea v-model="inputText" autofocus />
       </v-card-text>
 
       <v-divider></v-divider>

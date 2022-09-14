@@ -5,6 +5,7 @@
       color="primary"
       dark
     >
+      <!-- LANGUAGE SELECTOR -->
       <div class="d-flex align-center">
         <v-select
           v-model="$i18n.locale"
@@ -74,7 +75,7 @@
           <ConfirmationDialog
             ref="dialogEl1"
             v-bind="dialogProps"
-            @ok="dialogResponse2 = $event"
+            @ok="handleOk($event, true)"
           />
         </div>
 
@@ -188,11 +189,16 @@ const handleOk = (textFromDialog, fromFirstDialog = true) => {
     : dialogResponse2.value = textFromDialog
 }
 
-watch([dialogResponse, dialogResponse2], () => {
+watch([dialogResponse, dialogResponse2], ([res1]) => {
   setTimeout(() => {
-    dialogResponse.value = ''
+    if (res1) {
+      dialogResponse.value = ''
+
+      return
+    }
+
     dialogResponse2.value = ''
-  }, 5000)
+  }, 3000)
 })
 </script>
 
