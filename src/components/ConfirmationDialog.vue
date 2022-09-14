@@ -1,17 +1,5 @@
 <template>
-  <v-dialog v-model="isDialogOpen">
-    <template #activator="{ on, attrs }">
-      <v-btn
-        class="mt-4"
-        color="primary"
-        dark
-        v-bind="attrs"
-        v-on="on"
-      >
-        {{ $t('dialog.open') }}
-      </v-btn>
-    </template>
-
+  <v-dialog v-model="isDialogOpen" :max-width="500">
     <v-card>
       <v-card-title class="text-h5" :class="headerClass">
         {{ header }}
@@ -50,7 +38,7 @@
 </template>
 
 <script setup>
-import { defineProps, defineEmits, ref, computed, watch } from 'vue'
+import { defineEmits, defineExpose, defineProps, ref, computed, watch } from 'vue'
 
 const props = defineProps({
   header: {
@@ -114,9 +102,17 @@ const handleOk = () => {
   emits('ok', inputText)
 }
 
+const open = () => isDialogOpen.value = true
+const close = () => isDialogOpen.value = false
+
 watch(isDialogOpen, val => {
   if (val) {
     inputText.value = ''
   }
+})
+
+defineExpose({
+  open,
+  close
 })
 </script>
