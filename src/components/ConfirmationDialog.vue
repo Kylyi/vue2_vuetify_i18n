@@ -13,10 +13,10 @@
         <v-textarea v-model="inputText" autofocus />
       </v-card-text>
 
-      <v-divider></v-divider>
+      <v-divider />
 
       <v-card-actions>
-        <v-spacer></v-spacer>
+        <v-spacer />
         <v-btn
           text
           class="grey lighten-3"
