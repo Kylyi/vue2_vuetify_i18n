@@ -1,0 +1,21 @@
+{
+  "dialog": {
+    "headerText": "Header text",
+    "text": "Dialog text",
+    "requiresInput": "Dialog requires input",
+    "response": "Dialog response",
+    "ok": "Ok",
+    "open": "Click me to open dialog",
+    "cancel": "Cancel",
+    "type": "Type of dialog"
+  },
+  "state": {
+    "error": "Error",
+    "warning": "Warning",
+    "info": "Info",
+    "success": "Success"
+  },
+  "app": {
+    "language": "Language"
+  }
+}
