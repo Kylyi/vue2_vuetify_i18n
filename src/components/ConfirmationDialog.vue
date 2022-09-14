@@ -99,7 +99,7 @@ const headerClass = computed(() => {
 
 const handleOk = () => {
   isDialogOpen.value = false
-  emits('ok', inputText)
+  emits('ok', inputText.value)
 }
 
 const open = () => isDialogOpen.value = true
